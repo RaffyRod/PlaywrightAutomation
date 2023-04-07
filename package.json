@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Playwright automation framework for OrangeHRM page",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RaffyRod/PlaywrightAutomation.git"
@@ -22,6 +20,7 @@
   },
   "homepage": "https://github.com/RaffyRod/PlaywrightAutomation#readme",
   "devDependencies": {
+    "@playwright/test": "^1.32.2",
     "prettier": "2.8.7"
   }
 }
