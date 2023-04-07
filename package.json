@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Playwright automation framework for OrangeHRM page",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test-debug": "npx playwright test --debug"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RaffyRod/PlaywrightAutomation.git"
@@ -22,5 +25,9 @@
   "devDependencies": {
     "@playwright/test": "^1.32.2",
     "prettier": "2.8.7"
+  },
+  "dependencies": {
+    "@ngneat/falso": "^6.4.0",
+    "dotenv": "^16.0.3"
   }
 }
