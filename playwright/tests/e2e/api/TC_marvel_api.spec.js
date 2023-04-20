@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('Get Marvel Characters', async ({ request, baseURL }) => {
+test('Get Marvel Characters', async ({ request }) => {
   const _response = await request.get(
     `${process.env.COMIC_URL}/v1/public/characters?ts=${process.env.TS}&apikey=${process.env.PUBLIC_KEY}&hash=${process.env.HASH}&limit=${process.env.LIMIT}`
   );
@@ -12,8 +12,7 @@ test('Get Marvel Characters', async ({ request, baseURL }) => {
 });
 
 test('Attempt to Get more  Marvel Characters than allowed limit', async ({
-  request,
-  baseURL
+  request
 }) => {
   const _response = await request.get(
     `${process.env.COMIC_URL}/v1/public/characters?ts=${
@@ -33,8 +32,7 @@ test('Attempt to Get more  Marvel Characters than allowed limit', async ({
 });
 
 test('Attempt to Get  Marvel Characters, unable to authenticate', async ({
-  request,
-  baseURL
+  request
 }) => {
   const _response = await request.get(
     `${process.env.COMIC_URL}/v1/public/characters?apikey=${process.env.PUBLIC_KEY}&hash=${process.env.HASH}&limit=${process.env.LIMIT}`
