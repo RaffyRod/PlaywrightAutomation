@@ -1,0 +1,20 @@
+{
+  "globals": {
+    "require": true,
+    "exports": true,
+    "process": true
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "max-len": ["error", { "code": 200 }]
+  }
+}

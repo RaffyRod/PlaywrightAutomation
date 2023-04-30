@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test-debug": "npx playwright test --debug"
+    "test-debug": "npx playwright test --debug",
+    "format-conflict": "npx eslint-config-prettier playwrightautomation/*.*",
+    "lint": "eslint playwright/**/*.{js,ts,tsx}",
+    "lint-fix": "npm run lint -- --fix",
+    "format": "prettier --write playwright/**/*.{js,ts,tsx}"
   },
   "repository": {
     "type": "git",
@@ -24,6 +28,8 @@
   "homepage": "https://github.com/RaffyRod/PlaywrightAutomation#readme",
   "devDependencies": {
     "@playwright/test": "^1.32.2",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
     "prettier": "2.8.7"
   },
   "dependencies": {

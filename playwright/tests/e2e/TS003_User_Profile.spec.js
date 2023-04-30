@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
-const { UserProfilePage } = require('../pages/userProfilePage');
-const { LoginPage } = require('../pages/loginPage');
-const { DashboardPage } = require('../pages/dashboardPage');
+const { UserProfilePage } = require('../../pages/userProfilePage');
+const { LoginPage } = require('../../pages/loginPage');
+const { DashboardPage } = require('../../pages/dashboardPage');
 
 test.describe('User profile tests', () => {
   test.beforeEach(async ({ page }) => {
@@ -28,14 +28,10 @@ test.describe('User profile tests', () => {
   test('Click on Change password', async ({ page }) => {
     const userProfile = new UserProfilePage(page);
     await userProfile.changePasswordSection();
-    await expect(userProfile.changePasswordHeader).toHaveText([
-      `Update Password`
-    ]);
+    await expect(userProfile.changePasswordHeader).toHaveText([`Update Password`]);
   });
 
-  test('Close user profile section by clicking somewhere else', async ({
-    page
-  }) => {
+  test('Close user profile section by clicking somewhere else', async ({ page }) => {
     const userProfile = new UserProfilePage(page);
     const dashboard = new DashboardPage(page);
     await userProfile.userProfileSection();
