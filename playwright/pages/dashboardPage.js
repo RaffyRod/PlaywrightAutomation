@@ -4,9 +4,7 @@ require('dotenv').config();
 exports.DashboardPage = class DashboardPage {
   constructor(page) {
     this.page = page;
-    this.dashboardPageButton = page.locator(
-      '.oxd-topbar-header-breadcrumb > .oxd-text'
-    );
+    this.dashboardPageButton = page.locator('.oxd-topbar-header-breadcrumb > .oxd-text');
     this.userDropDown = page.locator('[class=oxd-userdropdown]');
     this.logoutButton = page.locator('[class=oxd-userdropdown-link]').nth(3);
     this.timeAtWorkTitle = page.locator(
@@ -32,15 +30,11 @@ exports.DashboardPage = class DashboardPage {
     this.employeeDistributionBySubUnitTitle = page.locator(
       ':nth-child(6) > .oxd-sheet > .orangehrm-dashboard-widget-header > .orangehrm-dashboard-widget-name > .oxd-text'
     );
-    this.employeeDistributionBySubUnitCard = page.locator(
-      ':nth-child(6) > .oxd-sheet'
-    );
+    this.employeeDistributionBySubUnitCard = page.locator(':nth-child(6) > .oxd-sheet');
     this.employeeDistributionByLocationTitle = page.locator(
       ':nth-child(7) > .oxd-sheet > .orangehrm-dashboard-widget-header > .orangehrm-dashboard-widget-name > .oxd-text'
     );
-    this.employeeDistributionByLocationTitleCard = page.locator(
-      ':nth-child(7) > .oxd-sheet'
-    );
+    this.employeeDistributionByLocationTitleCard = page.locator(':nth-child(7) > .oxd-sheet');
   }
 
   async logout() {
@@ -85,16 +79,5 @@ exports.DashboardPage = class DashboardPage {
   async employeeDistributionByLocation() {
     await expect(this.employeeDistributionByLocationTitle).toBeVisible();
     await expect(this.employeeDistributionByLocationTitleCard).toBeVisible();
-  }
-
-  async pageObjectModel() {
-    await this.logout();
-    await this.timeAtWork();
-    await this.myActions();
-    await this.quickLaunch();
-    await this.buzzLatestPost();
-    await this.employeeOnLeaveToday();
-    await this.employeeDistributionBySubUnit();
-    await this.employeeDistributionByLocation();
   }
 };
