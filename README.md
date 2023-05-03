@@ -59,6 +59,8 @@ For the API testing it was required to be automated 3 request to the Marvel Comi
 - [Sonar Cloud](https://www.sonarsource.com/products/sonarcloud/)
 - [dotEnv](https://www.npmjs.com/package/dotenv)
 - [Prettier](https://prettier.io/)
+- [husky](https://github.com/typicode/husky)
+- [Lint-staged](https://github.com/okonet/lint-staged)
 
 ## Before Installing
 
