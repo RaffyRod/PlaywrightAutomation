@@ -1,32 +1,35 @@
-const { test } = require('@playwright/test');
+const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../../pages/loginPage');
+import { randEmail, randAbbreviation } from '@ngneat/falso';
+require('dotenv').config();
+
+const fakeEmail = randEmail();
+const fakePassword = randAbbreviation();
 
 test.describe('Login test', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('./login');
   });
 
-  test('Click on Login with empty fields', async ({ page }) => {
+  test('Attempt to Login with empty fields', async ({ page }) => {
     const login = new LoginPage(page);
-    await login.checkLoginPage();
     await login.emptyFieldsAlert();
   });
 
-  test('Login with invalid username and password', async ({ page }) => {
+  test('Attempt to Login with invalid credentials', async ({ page }) => {
     const login = new LoginPage(page);
-    await login.checkLoginPage();
-    await login.invalidLogin();
+    await login.login(fakeEmail, fakePassword);
+    await expect(login.invalidCredentialsAlert).toBeVisible();
+    await expect(login.invalidCredentialsAlert).toHaveText('Invalid credentials');
   });
 
-  test('Login with just email typed', async ({ page }) => {
+  test('Attempt to Login without password', async ({ page }) => {
     const login = new LoginPage(page);
-    await login.checkLoginPage();
     await login.invalidLoginMissingPassword();
   });
 
-  test('Login with just password typed', async ({ page }) => {
+  test('Attempt to Login without email', async ({ page }) => {
     const login = new LoginPage(page);
-    await login.checkLoginPage();
-    await login.invalidLoginMissingEmail();
+    await login.login(' ', process.env.USER_PASSWORD);
   });
 });

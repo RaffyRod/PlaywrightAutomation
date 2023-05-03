@@ -6,6 +6,19 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
+  ESlint-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+
+      - name: Run ESLint
+        uses: actions/checkout@v2
+        with:
+          start: npm run lint
+
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest

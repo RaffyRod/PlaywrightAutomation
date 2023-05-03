@@ -1,12 +1,13 @@
 const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../../pages/loginPage');
 const { DashboardPage } = require('../../pages/dashboardPage');
+require('dotenv').config();
 
 test.describe('Dashboard tests', () => {
   test.beforeEach(async ({ page }) => {
     const login = new LoginPage(page);
     await page.goto('./login');
-    await login.login();
+    await login.login(process.env.USER_NAME, process.env.USER_PASSWORD);
   });
 
   test.afterEach(async ({ page }) => {
@@ -41,24 +42,18 @@ test.describe('Dashboard tests', () => {
   test('Check Employees on Leave', async ({ page }) => {
     const dashboard = new DashboardPage(page);
     await dashboard.employeeOnLeaveToday();
-    await expect(dashboard.employeeOnLeaveTodayTittle).toHaveText(
-      `Employees on Leave Today`
-    );
+    await expect(dashboard.employeeOnLeaveTodayTittle).toHaveText(`Employees on Leave Today`);
   });
 
   test('Check Employee Distribution by Sub Unit', async ({ page }) => {
     const dashboard = new DashboardPage(page);
     await dashboard.employeeDistributionBySubUnit();
-    await expect(dashboard.employeeDistributionBySubUnitTitle).toHaveText(
-      `Employee Distribution by Sub Unit`
-    );
+    await expect(dashboard.employeeDistributionBySubUnitTitle).toHaveText(`Employee Distribution by Sub Unit`);
   });
 
   test('Check Employee Distribution by Location', async ({ page }) => {
     const dashboard = new DashboardPage(page);
     await dashboard.employeeDistributionByLocation();
-    await expect(dashboard.employeeDistributionByLocationTitle).toHaveText(
-      `Employee Distribution by Location`
-    );
+    await expect(dashboard.employeeDistributionByLocationTitle).toHaveText(`Employee Distribution by Location`);
   });
 });
