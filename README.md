@@ -17,10 +17,10 @@ The framework contains the automation of some modules from the website [demo.ora
 #### Login Page
 
 - Login successful.
-- Click on Login with empty fields.
-- Login with invalid username and password.
-- Login with just email typed.
-- Login with just password typed.
+- Attempt to Login with empty fields.
+- Attempt to Login with invalid credentials.
+- Attempt to Login without password.
+- Attempt to Login without email.
 
 #### User profile section
 
