@@ -34,6 +34,17 @@
     "lint-staged": "^13.2.2",
     "prettier": "2.8.7"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@ngneat/falso": "^6.4.0",
     "dotenv": "^16.0.3"
