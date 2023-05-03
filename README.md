@@ -17,10 +17,10 @@ The framework contains the automation of some modules from the website [demo.ora
 #### Login Page
 
 - Login successful.
-- Click on Login with empty fields.
-- Login with invalid username and password.
-- Login with just email typed.
-- Login with just password typed.
+- Attempt to Login with empty fields.
+- Attempt to Login with invalid credentials.
+- Attempt to Login without password.
+- Attempt to Login without email.
 
 #### User profile section
 
@@ -59,6 +59,8 @@ For the API testing it was required to be automated 3 request to the Marvel Comi
 - [Sonar Cloud](https://www.sonarsource.com/products/sonarcloud/)
 - [dotEnv](https://www.npmjs.com/package/dotenv)
 - [Prettier](https://prettier.io/)
+- [husky](https://github.com/typicode/husky)
+- [Lint-staged](https://github.com/okonet/lint-staged)
 
 ## Before Installing
 
