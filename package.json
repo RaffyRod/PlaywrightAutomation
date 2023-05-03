@@ -9,7 +9,8 @@
     "format-conflict": "npx eslint-config-prettier playwrightautomation/*.*",
     "lint": "eslint playwright/**/*.{js,ts,tsx}",
     "lint-fix": "npm run lint -- --fix",
-    "format": "prettier --write playwright/**/*.{js,ts,tsx}"
+    "format": "prettier --write playwright/**/*.{js,ts,tsx}",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,7 @@
     "@playwright/test": "^1.32.2",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
     "prettier": "2.8.7"
   },
@@ -40,9 +41,8 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
+    "*.{js,md}": [
+      "prettier --write"
     ]
   },
   "dependencies": {
