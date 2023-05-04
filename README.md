@@ -24,20 +24,20 @@ The framework contains the automation of some modules from the website [demo.ora
 
 #### User profile section
 
-- Click on About.
-- Click on Support.
-- Click on Change password.
-- Click on Logout.
-- Close user profile section by clicking somewhere else.
+- Navigate to About section.
+- Navigate to Support section.
+- Navigate to Change password page.
+- Attempt to close users profile.
 
 #### Dashboard page
 
-- Check Time at Work section.
-- Check My Actions section.
-- Check Quick Launch section.
-- Check Employees on Leave Today section.
-- Check Employee Distribution by Sub Unit section.
-- Check Employee Distribution by Location section.
+- Verify Time at Work section title.
+- Verify My Actions section title.
+- Verify Quick Launch section title.
+- Verify Employees on Leave Today section title.
+- Verify Buzz Latest Posts title.
+- Verify Employee Distribution by Sub Unit section title.
+- Verify Employee Distribution by Location section title.
 
 ### API testing
 
