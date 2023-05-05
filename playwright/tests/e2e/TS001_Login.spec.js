@@ -1,5 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../../pages/loginPage');
+const { DashboardPage } = require('../../pages/dashboardPage');
 import { randEmail, randAbbreviation } from '@ngneat/falso';
 require('dotenv').config();
 
@@ -11,6 +12,10 @@ test.describe('Login test', () => {
     await page.goto('./login');
   });
 
+  test('Successful login', async ({ page }) => {
+    const login = new LoginPage(page);
+    await login.login(process.env.USER_NAME, process.env.USER_PASSWORD);
+  });
   test('Attempt to Login with empty fields', async ({ page }) => {
     const login = new LoginPage(page);
     await login.emptyFieldsAlert();
@@ -31,5 +36,11 @@ test.describe('Login test', () => {
   test('Attempt to Login without email', async ({ page }) => {
     const login = new LoginPage(page);
     await login.login(' ', process.env.USER_PASSWORD);
+  });
+  test('Log out', async ({ page }) => {
+    const login = new LoginPage(page);
+    await login.login(process.env.USER_NAME, process.env.USER_PASSWORD);
+    const dashboard = new DashboardPage(page);
+    await dashboard.logout();
   });
 });
