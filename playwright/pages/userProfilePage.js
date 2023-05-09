@@ -5,18 +5,12 @@ exports.UserProfilePage = class UserProfilePage {
     this.page = page;
     this.userDropDown = page.locator('[class=oxd-userdropdown]');
     this.aboutButton = page.locator('[class=oxd-userdropdown-link]').nth(0);
-    this.aboutCard = page.locator(
-      '.oxd-dialog-container-default--inner > .oxd-sheet'
-    );
+    this.aboutCard = page.locator('.oxd-dialog-container-default--inner > .oxd-sheet');
     this.dismissAboutCard = page.locator('.oxd-dialog-close-button');
     this.supportButton = page.locator('[class=oxd-userdropdown-link]').nth(1);
     this.supportCard = page.locator('.orangehrm-card-container');
-    this.changePasswordButton = page
-      .locator('[class=oxd-userdropdown-link]')
-      .nth(2);
-    this.changePasswordHeader = page.locator(
-      '.orangehrm-card-container > .oxd-text--h6'
-    );
+    this.changePasswordButton = page.locator('[class=oxd-userdropdown-link]').nth(2);
+    this.changePasswordHeader = page.locator('.orangehrm-card-container > .oxd-text--h6');
     this.logoutButton = page.locator('[class=oxd-userdropdown-link]').nth(3);
   }
 

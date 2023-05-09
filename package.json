@@ -42,7 +42,8 @@
   },
   "lint-staged": {
     "*.{js,md}": [
-      "prettier --write"
+      "npm run lint",
+      "npm run format"
     ]
   },
   "dependencies": {
